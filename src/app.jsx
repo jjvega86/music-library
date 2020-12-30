@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './app.css';
+import Banner from './components/Banner/banner';
 import Footer from './components/Footer/footer';
 
 class App extends Component{
@@ -7,11 +8,9 @@ class App extends Component{
     render(){
         return(
             <div className="container-fluid">
-                <h1 className="center">Music Library 3.0</h1>
+                <Banner />
                 <Footer />
             </div>
-       
-
         );
     }
 }

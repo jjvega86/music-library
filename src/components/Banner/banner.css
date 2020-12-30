@@ -1,0 +1,10 @@
+.jumbotron {
+    background-image: url("../../img/Music-banner-1.jpg");
+    background-size: cover;
+    height: 30vh;
+    width: 100%;
+}
+
+.h1-banner {
+    color: darkslategray;
+}
