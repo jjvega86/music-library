@@ -18,7 +18,7 @@ class MusicTable extends Component{
     render(){
         return(
             
-            <table className="table table-dark">
+            <table className="table table-light">
                 <thead>
                     <tr>
                         <th scope="col">Title</th>
