@@ -8,7 +8,8 @@ import Footer from './components/Footer/footer';
 
 class App extends Component{
     state = {
-        songs: []
+        songs: [],
+        filterStr: ''
     }
 
     componentDidMount(){
@@ -19,6 +20,10 @@ class App extends Component{
             this.setState({songs});
         })
     }
+
+    // turn SearchBox into class component with state
+    // write a filter method that changes the songs stateful variable based on user input from SearchBox
+    // pass that method via props to SearchBox and include it in the handleSubmit method
 
     render(){
         return(
