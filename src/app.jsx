@@ -25,10 +25,19 @@ class App extends Component{
     // write a filter method that changes the songs stateful variable based on user input from SearchBox
     // pass that method via props to SearchBox and include it in the handleSubmit method
 
+    setFilterValue = (value) => { //this logs when state changes but doesn't bind the value
+        this.setState({
+            [this.state.filterStr]: value
+        });
+        console.log(this.state.filterStr);
+    }
+    
+    
+
     render(){
         return(
             <div className="container-fluid">
-                <NavBar />
+                <NavBar setFilterValue={this.setFilterValue.bind(this)}/>
                 <Banner />
                 <MusicTable songs={this.state.songs}/>
                 <Footer />

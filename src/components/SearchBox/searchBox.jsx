@@ -24,6 +24,11 @@ class SearchBox extends React.Component{
     handleSubmit(event){
         event.preventDefault();
         console.log(this.state.filter);
+        const filterValue = this.state.filter;
+        this.props.setFilterValue(filterValue);
+        this.setState({
+            filter: ''
+        })
 
     }
 
