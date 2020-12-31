@@ -6,7 +6,7 @@ function Banner(props){
         <div className="row">
             <div className="jumbotron">
                 <div className="container">
-                    <h1 className="h1-banner">Music Library 3.0</h1>
+                    <h1 className="h1-banner text-center">Music Library 3.0</h1>
                 </div>
             </div>
         </div>
