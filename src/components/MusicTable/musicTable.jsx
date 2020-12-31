@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import axios from 'axios';
 import './musicTable.css';
 
@@ -11,6 +11,7 @@ class MusicTable extends Component{
         axios.get('http://www.devcodecampmusiclibrary.com/api/music')
         .then(res => {
             const songs = res.data;
+            console.log(res.status);
             this.setState({songs});
         })
     }
