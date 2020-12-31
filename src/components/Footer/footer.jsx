@@ -3,8 +3,8 @@ import './footer.css';
 
 function Footer(props){
     return(
-        <footer class="fixed-bottom footer">
-            <div class="text-center p-3">
+        <footer className="fixed-bottom footer">
+            <div className="text-center p-3">
                 © 2020 Copyright: JJ
             </div>
         </footer>

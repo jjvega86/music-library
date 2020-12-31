@@ -25,7 +25,7 @@ class App extends Component{
             <div className="container-fluid">
                 <NavBar />
                 <Banner />
-                <MusicTable />
+                <MusicTable songs={this.state.songs}/>
                 <Footer />
             </div>
         );

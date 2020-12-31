@@ -2,7 +2,6 @@ import React from 'react';
 import './musicTable.css';
 
 function MusicTable (props){
-    
     return(
         
         <table className="table table-light">
@@ -16,7 +15,7 @@ function MusicTable (props){
                 </tr>
             </thead>
             <tbody>
-            {this.props.songs.map(song => 
+            {props.songs.map(song => 
             <tr key={song.id}>
                 <td>{song.title}</td>
                 <td>{song.album}</td>

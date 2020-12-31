@@ -1,11 +1,13 @@
 import React from 'react';
+import SearchBox from '../SearchBox/searchBox';
 import './navbar.css';
 
 function NavBar(props){
     return(
         <div className="row">
-            <nav class="navbar navbar-dark bg-dark">
+            <nav className="navbar navbar-dark bg-dark">
                 <div className="navbar-brand"></div>
+                <div className="float-right"><SearchBox /></div> 
             </nav>
         </div>
     )
