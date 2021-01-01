@@ -7,7 +7,7 @@ function NavBar(props){
         <div className="row">
             <nav className="navbar navbar-dark bg-dark">
                 <div className="navbar-brand"></div>
-                <div className="float-right"><SearchBox setFilterValue={props.setFilterValue.bind(this)} /></div> 
+                <div className="float-right"><SearchBox {...props} /></div> 
             </nav>
         </div>
     )

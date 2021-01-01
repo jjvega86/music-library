@@ -7,10 +7,17 @@ import MusicTable from './components/MusicTable/musicTable';
 import Footer from './components/Footer/footer';
 
 class App extends Component{
-    state = {
-        songs: [],
-        filterStr: ''
+    constructor(props){
+        super(props);
+        this.state = {
+            songs: [],
+            filter: ''
+        }
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+
     }
+    
 
     componentDidMount(){
         axios.get('http://www.devcodecampmusiclibrary.com/api/music')
@@ -27,9 +34,28 @@ class App extends Component{
 
     setFilterValue = (value) => { //this logs when state changes but doesn't bind the value
         this.setState({
-            [this.state.filterStr]: value
+            filter: value
+        })
+        console.log(this.filter);
+    }
+
+    handleChange(event){
+        this.setState({
+            [event.target.name]: event.target.value
         });
-        console.log(this.state.filterStr);
+        //console.log(this.state.filter);
+
+    }
+
+    handleSubmit(event){
+        event.preventDefault();
+        const filterValue = this.state.filter;
+        console.log(filterValue);
+        this.setFilterValue(filterValue);
+        this.setState({
+            filter: ''
+        })
+
     }
     
     
@@ -37,7 +63,10 @@ class App extends Component{
     render(){
         return(
             <div className="container-fluid">
-                <NavBar setFilterValue={this.setFilterValue.bind(this)}/>
+                <NavBar handleChange={() => this.handleChange()}
+                handleSubmit={() => this.handleSubmit()}
+                filter={this.state.filter}
+                />
                 <Banner />
                 <MusicTable songs={this.state.songs}/>
                 <Footer />
