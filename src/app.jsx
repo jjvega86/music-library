@@ -11,7 +11,8 @@ class App extends Component{
         super(props);
         this.state = {
             songs: [],
-            filter: ''
+            input: '',
+            search: ''
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -32,29 +33,22 @@ class App extends Component{
     // write a filter method that changes the songs stateful variable based on user input from SearchBox
     // pass that method via props to SearchBox and include it in the handleSubmit method
 
-    setFilterValue = (value) => { //this logs when state changes but doesn't bind the value
-        this.setState({
-            filter: value
-        })
-        console.log(this.filter);
-    }
-
     handleChange(event){
         this.setState({
             [event.target.name]: event.target.value
         });
-        //console.log(this.state.filter);
 
     }
 
     handleSubmit(event){
         event.preventDefault();
-        const filterValue = this.state.filter;
-        console.log(filterValue);
-        this.setFilterValue(filterValue);
+        const inputValue = this.state.input;
+        console.log(inputValue);
         this.setState({
-            filter: ''
+            search: inputValue,
+            input: ''
         })
+        console.log(inputValue);
 
     }
     
@@ -63,9 +57,9 @@ class App extends Component{
     render(){
         return(
             <div className="container-fluid">
-                <NavBar handleChange={() => this.handleChange()}
-                handleSubmit={() => this.handleSubmit()}
-                filter={this.state.filter}
+                <NavBar handleChange={this.handleChange}
+                handleSubmit={this.handleSubmit}
+                input={this.state.input}
                 />
                 <Banner />
                 <MusicTable songs={this.state.songs}/>
