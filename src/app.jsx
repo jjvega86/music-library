@@ -29,9 +29,7 @@ class App extends Component{
         })
     }
 
-    // turn SearchBox into class component with state
-    // write a filter method that changes the songs stateful variable based on user input from SearchBox
-    // pass that method via props to SearchBox and include it in the handleSubmit method
+    
 
     handleChange(event){
         this.setState({
@@ -44,13 +42,22 @@ class App extends Component{
         event.preventDefault();
         const inputValue = this.state.input;
         console.log(inputValue);
+        const songsCopy = this.state.songs;
+        const filteredSongs = songsCopy.filter(song => song.title.toLowerCase().includes(inputValue));
+        // call helper function to filter songs based on search
         this.setState({
             search: inputValue,
-            input: ''
+            input: '',
+            songs: filteredSongs
+            // set state for newly searched state
         })
         console.log(inputValue);
 
+        // ALT implementation: filter on handleChange to automatically change table
+        // for each key press
+
     }
+
     
     
 
