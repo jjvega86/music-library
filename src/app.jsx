@@ -12,7 +12,6 @@ class App extends Component{
         this.state = {
             songs: [],
             input: '',
-            search: ''
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
