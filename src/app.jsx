@@ -41,21 +41,31 @@ class App extends Component{
     handleSubmit(event){
         event.preventDefault();
         const inputValue = this.state.input;
-        console.log(inputValue);
-        const songsCopy = this.state.songs;
-        const filteredSongs = songsCopy.filter(song => song.title.toLowerCase().includes(inputValue));
+        const results = this.filteredSongs(inputValue);
         // call helper function to filter songs based on search
         this.setState({
-            search: inputValue,
             input: '',
-            songs: filteredSongs
-            // set state for newly searched state
+            songs: results
         })
-        console.log(inputValue);
-
         // ALT implementation: filter on handleChange to automatically change table
         // for each key press
+    }
 
+    filteredSongs = (search) => {
+        let songsCopy = this.state.songs;
+        let filteredSongs = songsCopy.filter(song =>{
+            return (
+                song.title.toLowerCase().includes(search.toLowerCase()) ||
+                song.artist.toLowerCase().includes(search.toLowerCase()) ||
+                song.genre.toLowerCase().includes(search.toLowerCase()) ||
+                song.album.toLowerCase().includes(search.toLowerCase()) ||
+                song.releaseDate.toLowerCase().includes(search.toLowerCase())
+
+            );
+        });
+
+        return filteredSongs;
+        
     }
 
     
