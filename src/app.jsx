@@ -5,6 +5,7 @@ import NavBar from './components/NavigationBar/navbar';
 import Banner from './components/Banner/banner';
 import MusicTable from './components/MusicTable/musicTable';
 import Footer from './components/Footer/footer';
+import SongCreator from './components/SongCreator/songCreator';
 
 class App extends Component{
     constructor(props){
@@ -77,6 +78,7 @@ class App extends Component{
                 handleSubmit={this.handleSubmit}
                 input={this.state.input}/>
                 <Banner />
+                <SongCreator />
                 <MusicTable songs={this.state.songs}/>
                 <Footer />
             </div>
