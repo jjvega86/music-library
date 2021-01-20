@@ -20,7 +20,7 @@ class App extends Component{
     
 
     componentDidMount(){
-        axios.get('http://www.devcodecampmusiclibrary.com/api/music')
+        axios.get('http://localhost:3000/api/songs')
         .then(res => {
             const songs = res.data;
             console.log(res.status);
