@@ -69,6 +69,7 @@ class App extends Component{
     }
 
     addNewSong(song){
+        //let json = JSON.parse(song);
         axios.post('http://localhost:5000/api/songs', { song })
         .then(res => {
             console.log(res);
