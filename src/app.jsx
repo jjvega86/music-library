@@ -20,7 +20,7 @@ class App extends Component{
     
 
     componentDidMount(){
-        axios.get('http://localhost:3000/api/songs')
+        axios.get('http://localhost:5000/api/songs')
         .then(res => {
             const songs = res.data;
             console.log(res.status);
@@ -75,8 +75,7 @@ class App extends Component{
             <div className="container-fluid">
                 <NavBar handleChange={this.handleChange}
                 handleSubmit={this.handleSubmit}
-                input={this.state.input}
-                />
+                input={this.state.input}/>
                 <Banner />
                 <MusicTable songs={this.state.songs}/>
                 <Footer />
