@@ -69,7 +69,7 @@ class App extends Component{
     }
 
     addNewSong(song){
-        axios.post('http://localhost:5000/api/songs', {song})
+        axios.post('http://localhost:5000/api/songs', { song })
         .then(res => {
             console.log(res);
             console.log(res.data);
@@ -77,8 +77,6 @@ class App extends Component{
     }
 
     
-    
-
     render(){
         return(
             <div className="container-fluid">
@@ -86,7 +84,7 @@ class App extends Component{
                 handleSubmit={this.handleSubmit}
                 input={this.state.input}/>
                 <Banner />
-                <SongCreator />
+                <SongCreator addNewSong={this.addNewSong.bind(this)}/>
                 <MusicTable songs={this.state.songs}/>
                 <Footer />
             </div>

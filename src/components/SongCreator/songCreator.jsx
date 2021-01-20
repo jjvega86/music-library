@@ -28,6 +28,7 @@ class SongCreator extends React.Component{
             album: this.state.album,
             releaseDate: this.state.releaseDate
         }
+        console.log(song);
         console.log(this.state.title);
         console.log(this.state.artist);
         console.log(this.state.genre);
@@ -49,40 +50,24 @@ class SongCreator extends React.Component{
 
     render(){
         return(
-                <div className="row col-align">
-                    <form onSubmit={this.handleSubmit}>
-                        <div className="col-md-2">
-                            <label>Title:</label>
-                            <input type='text' name="title" value={this.state.title} 
-                            onChange={this.handleChange} />
-                        </div>
-                        <div className="col-md-2">
-                            <label>Artist:</label>
-                            <input type='text' name="artist" value={this.state.artist} 
-                            onChange={this.handleChange} />
-                        </div>
-                        <div className="col-md-2">
-                            <label>Genre:</label>
-                            <input type='text' name="genre" value={this.state.genre} 
-                            onChange={this.handleChange} />
-                        </div>
-                        <div className="col-md-2">
-                            <label>Album:</label>
-                            <input type='text' name="album" value={this.state.album} 
-                            onChange={this.handleChange} />
-                        </div>
-                        <div className="col-md-2">
-                            <label>Release Date:</label>
-                            <input type='text' name="releaseDate" value={this.state.releaseDate} 
-                            onChange={this.handleChange} />
-                        </div>
-                        <div className="col-md-2">
-                            <input type="submit" value="Add"></input>
-                        </div>
-                    </form>
-                </div>
-                
-            
+            <form onSubmit={this.handleSubmit}>
+                    <label>Title:</label>
+                    <input type='text' name="title" value={this.state.title} 
+                    onChange={this.handleChange} />
+                    <label>Artist:</label>
+                    <input type='text' name="artist" value={this.state.artist} 
+                    onChange={this.handleChange} />
+                    <label>Genre:</label>
+                    <input type='text' name="genre" value={this.state.genre} 
+                    onChange={this.handleChange} />
+                    <label>Album:</label>
+                    <input type='text' name="album" value={this.state.album} 
+                    onChange={this.handleChange} />
+                    <label>Release Date:</label>
+                    <input type='text' name="releaseDate" value={this.state.releaseDate} 
+                    onChange={this.handleChange} />
+                    <input type="submit" value="Add"></input>
+            </form>
         );
     }
 }
